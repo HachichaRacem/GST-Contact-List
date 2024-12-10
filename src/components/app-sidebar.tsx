@@ -1,5 +1,5 @@
 "use client";
-import { ChevronRight, CornerDownRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import {
@@ -20,6 +20,9 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { SideBarHeader } from "./ui/sidebar-header";
+import { Nunito } from "next/font/google";
+
+const nunito = Nunito({ weight: "300", subsets: ["latin"] });
 
 const data = {
   versions: ["1.0.1", "1.1.0-alpha", "2.0.0-beta1"],
@@ -126,7 +129,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader style={{ backgroundColor: "white" }}>
         <SideBarHeader />
       </SidebarHeader>
-      <SidebarContent className="gap-0" style={{ backgroundColor: "#037EF2" }}>
+      <SidebarContent
+        className={cn("gap-0", nunito.className)}
+        style={{ backgroundColor: "#037EF2" }}
+      >
         {data.navMain.map((item) => (
           <Collapsible
             key={item.title}

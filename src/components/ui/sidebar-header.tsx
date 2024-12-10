@@ -1,16 +1,19 @@
 import * as React from "react";
+import { Lato } from "next/font/google";
 
+const lato = Lato({ weight: "700", subsets: ["latin"] });
 export function SideBarHeader(props: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div {...props}>
       <h3
         style={{
           color: "#037EF2",
-          paddingLeft: "12px",
-          paddingTop: "12px",
+          paddingLeft: "16px",
+          paddingTop: "8px",
           paddingBottom: "12px",
-          fontWeight: "500",
+          fontSize: "24px",
         }}
+        className={lato.className}
       >
         Contact List
       </h3>
